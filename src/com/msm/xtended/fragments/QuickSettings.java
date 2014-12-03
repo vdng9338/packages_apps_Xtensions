@@ -42,11 +42,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
     private static final String X_FOOTER_TEXT_STRING = "x_footer_text_string";
+    private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
     private CustomSeekBarPreference mQsColumnsQuickbar;
     private SystemSettingEditTextPreference mFooterString;
+    private ListPreference mSmartPulldown;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,6 +76,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_QUICKBAR_COLUMNS, 6);
         mQsColumnsQuickbar.setValue(columnsQuickbar);
         mQsColumnsQuickbar.setOnPreferenceChangeListener(this);
+
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN); 
+        mSmartPulldown.setOnPreferenceChangeListener(this);
+        int smartPulldown = Settings.System.getInt(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0); 
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        updateSmartPulldownSummary(smartPulldown);
 
         mFooterString = (SystemSettingEditTextPreference) findPreference(X_FOOTER_TEXT_STRING);
         mFooterString.setOnPreferenceChangeListener(this);
@@ -106,6 +115,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_QUICKBAR_COLUMNS, value, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
+            updateSmartPulldownSummary(smartPulldown);
+            return true;
         } else if (preference == mFooterString) {
             String value = (String) newValue;
             if (value != "" && value != null)
@@ -115,7 +129,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 mFooterString.setText("MSM-Xtended");
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.X_FOOTER_TEXT_STRING, "MSM-Xtended");
-            }
+        }
             return true;
         }
         return false;
@@ -124,5 +138,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.XTENSIONS;
+    }
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+        }
     }
 }
