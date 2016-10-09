@@ -61,6 +61,12 @@
          android:fragment="com.msm.xtended.fragments.ClockSettings" />
 
     <Preference
+         android:key="battery_bar_category" 
+         android:title="@string/battery_bar_title" 
+         android:summary="@string/battery_bar_summary"
+         android:fragment="com.msm.xtended.fragments.BatteryBarSettings" />
+
+    <Preference
          android:key="animations_category"
          android:title="@string/animation_settings_title"
          android:summary="@string/animation_settings_summary"
