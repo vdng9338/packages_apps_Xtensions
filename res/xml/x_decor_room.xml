@@ -66,4 +66,10 @@
          android:summary="@string/animation_settings_summary"
          android:fragment="com.msm.xtended.fragments.AnimationSettings" />
 
+    <Preference
+         android:key="carrierlabel_settings"
+         android:title="@string/carrier_label_category_title"
+         android:summary="@string/carrier_label_category_summary"
+         android:fragment="com.msm.xtended.fragments.CarrierLabelSettings" />
+
 </PreferenceScreen>
