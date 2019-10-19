@@ -96,5 +96,11 @@
         android:summary="%s"
         android:defaultValue="1" />
 
+    <com.msm.xtended.preferences.SystemSettingSwitchPreference 
+        android:key="fp_unlock_keystore" 
+        android:title="@string/fp_unlock_keystore_title" 
+        android:summary="@string/fp_unlock_keystore_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
 
