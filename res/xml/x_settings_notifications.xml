@@ -43,6 +43,12 @@
         android:summary="@string/notification_headers_summary"
         android:defaultValue="true" />
 
+    <com.msm.xtended.preferences.SystemSettingSwitchPreference
+        android:key="hide_smart_replies"
+        android:title="@string/hide_smart_replies_title"
+        android:summary="@string/hide_smart_replies_summary"
+        android:defaultValue="false"/>
+
     <com.msm.xtended.preferences.SystemSettingSwitchPreference 
         android:key="notification_guts_kill_app_button" 
         android:title="@string/notification_guts_kill_app_button_title" 
