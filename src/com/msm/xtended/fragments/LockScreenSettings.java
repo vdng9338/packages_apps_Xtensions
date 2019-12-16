@@ -56,11 +56,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FP_KEYSTORE = "fp_unlock_keystore";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
 
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SystemSettingSwitchPreference mFingerprintUnlock;
+    private Preference mFODIconPicker;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -103,6 +105,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                mFingerprintUnlock.setEnabled(true);
                mFingerprintUnlock.setSummary(R.string.fp_unlock_keystore_summary);
             }
+        }
+
+        mFODIconPicker = (Preference) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPicker != null
+                && !getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
+            prefScreen.removePreference(mFODIconPicker);
         }
     }
 
