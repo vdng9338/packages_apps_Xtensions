@@ -18,6 +18,12 @@
 	android:title="@string/xtra_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <Preference
+            android:key="gaming_mode"
+            android:summary="@string/gaming_mode_summary"
+            android:fragment="com.msm.xtended.fragments.GamingMode" 
+            android:title="@string/gaming_mode_title" />
+
         <ListPreference
             android:key="ringtone_focus_mode" 
             android:title="@string/ringtone_focus_mode_title" 
