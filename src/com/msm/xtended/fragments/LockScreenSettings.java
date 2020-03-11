@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.app.WallpaperManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
@@ -64,6 +65,7 @@ private SwitchPreference mFingerprintVib;
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PackageManager mPm = getActivity().getPackageManager();
         Resources resources = getResources();
 
         mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
@@ -74,12 +76,17 @@ private SwitchPreference mFingerprintVib;
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE); 
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
-        if (!mFingerprintManager.isHardwareDetected()){
-            prefScreen.removePreference(mFingerprintVib);
+        if (mPm.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT) &&
+                 mFingerprintManager != null) {
+            if (!mFingerprintManager.isHardwareDetected()){
+                prefScreen.removePreference(mFingerprintVib);
+            } else {
+                mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
+                        Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
+                mFingerprintVib.setOnPreferenceChangeListener(this);
+            }
         } else {
-            mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(), 
-                    Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
-            mFingerprintVib.setOnPreferenceChangeListener(this);
+            prefScreen.removePreference(mFingerprintVib);
         }
     }
 
