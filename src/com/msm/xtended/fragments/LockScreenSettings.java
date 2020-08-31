@@ -39,12 +39,14 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import com.android.settings.R;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.msm.xtended.preferences.CustomSeekBarPreference;
 import com.msm.xtended.preferences.SystemSettingSwitchPreference;
 import com.msm.xtended.preferences.SystemSettingSeekBarPreference;
 import com.msm.xtended.preferences.SecureSettingListPreference;
+import com.msm.xtended.preferences.*;
 
 import com.msm.xtended.preferences.XUtils;
 
@@ -53,10 +55,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String FP_KEYSTORE = "fp_unlock_keystore";
 
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private FingerprintManager mFingerprintManager;
-private SwitchPreference mFingerprintVib;
+    private SwitchPreference mFingerprintVib;
+    private SystemSettingSwitchPreference mFingerprintUnlock;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -87,6 +91,18 @@ private SwitchPreference mFingerprintVib;
             }
         } else {
             prefScreen.removePreference(mFingerprintVib);
+        }
+
+        mFingerprintUnlock = (SystemSettingSwitchPreference) findPreference(FP_KEYSTORE);
+
+        if (mFingerprintUnlock != null) {
+           if (LockPatternUtils.isDeviceEncryptionEnabled()) {
+               mFingerprintUnlock.setEnabled(false);
+               mFingerprintUnlock.setSummary(R.string.fp_encrypt_warning);
+            } else {
+               mFingerprintUnlock.setEnabled(true);
+               mFingerprintUnlock.setSummary(R.string.fp_unlock_keystore_summary);
+            }
         }
     }
 
