@@ -877,4 +877,8 @@
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
+    <!-- Notification headers -->
+    <string name="notification_headers_title">Notification headers</string>
+    <string name="notification_headers_summary">Show headers in the notification shade</string>
+
 </resources>

@@ -10,6 +10,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.xtended.XtendedUtils;
 import com.msm.xtended.preferences.XUtils;
 
 import android.content.Context;
@@ -25,6 +26,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.msm.xtended.preferences.CustomSeekBarPreference;
 import com.msm.xtended.preferences.SystemSettingSeekBarPreference;
+import com.msm.xtended.preferences.SystemSettingSwitchPreference;
 
 public class NotificationSettings extends SettingsPreferenceFragment
                          implements OnPreferenceChangeListener {
@@ -35,6 +37,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
+    private static final String NOTIFICATION_HEADERS = "notification_headers";
 
     private Preference mChargingLeds;
     private SwitchPreference mSmsBreath;
@@ -42,6 +45,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
     private SwitchPreference mVoicemailBreath;
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
+    private SystemSettingSwitchPreference mNotificationHeader;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -72,6 +76,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
                 Settings.System.OMNI_DOZE_BRIGHTNESS, defaultDoze);
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
+
+        mNotificationHeader = findPreference(NOTIFICATION_HEADERS); 
+        mNotificationHeader.setChecked((Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_HEADERS, 1) == 1));
+        mNotificationHeader.setOnPreferenceChangeListener(this);
 
         // Breathing Notifications
         mSmsBreath = (SwitchPreference) findPreference(SMS_BREATH);
@@ -136,7 +145,13 @@ public class NotificationSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.OMNI_DOZE_BRIGHTNESS, value);
             return true;
-         }
+        } else if (preference == mNotificationHeader) {
+          boolean value = (Boolean) newValue;
+          Settings.System.putInt(resolver,
+                    Settings.System.NOTIFICATION_HEADERS, value ? 1 : 0);
+          XtendedUtils.showSystemUiRestartDialog(getContext());
+          return true;
+        }
         return false;
     }
 
