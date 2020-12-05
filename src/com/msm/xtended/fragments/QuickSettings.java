@@ -40,7 +40,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
-    private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
+    private static final String PREF_COLUMNS_QUICKBAR = "qs_quickbar_columns";
     private static final String X_FOOTER_TEXT_STRING = "x_footer_text_string";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
