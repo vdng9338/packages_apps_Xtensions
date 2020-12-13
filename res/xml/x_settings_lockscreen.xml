@@ -107,14 +107,7 @@
         android:title="@string/fprint_sucess_vib_title" 
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
-        
-     <!-- FOD Nightlight -->
-        <com.msm.xtended.preferences.SystemSettingSwitchPreference
-            android:key="fod_night_light"
-            android:title="@string/fod_night_light_title"
-            android:summary="@string/fod_night_light_summary"
-            android:defaultValue="@*android:bool/disable_fod_night_light"  />
-
+    
     <!-- FOD icon picker -->
     <Preference
         android:key="fod_icon_picker_category"
