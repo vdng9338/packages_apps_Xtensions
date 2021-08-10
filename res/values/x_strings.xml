@@ -326,6 +326,7 @@
     <string name="power_menu_animation_card">3D</string>
     <string name="power_menu_animation_translucent_top">Translucent (top)</string>
     <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
+    <string name="power_menu_animation_rotate">Rotate</string>
 
     <!-- Lockscreen ui category -->
     <string name="lock_screen_elements_category_title">Lock screen elements</string>
@@ -446,6 +447,10 @@
     <string name="lockscreen_date_selection_str_gradient">Gradient</string>
     <string name="lockscreen_date_selection_str_border_accent">Dark with accented borders</string>
     <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
+    <string name="lockscreen_date_selection_str_box_gradient_fd">X Accent-Gradient box full date</string>
+    <string name="lockscreen_date_selection_str_border_gradient_fd">X Accent-Gradient borders full date</string>
+    <string name="lockscreen_date_selection_str_box_gradient_ad">X Accent-Gradient box</string>
+    <string name="lockscreen_date_selection_str_border_gradient_ad">X Accent-Gradient borders</string>
 
     <!-- Lockscreen items allignment category -->
     <string name="lock_screen_items_allignment_category_title">Lockscreen items allignment</string>
@@ -494,6 +499,8 @@
     <string name="qs_tint_off">Gradient effect</string>
     <string name="qs_tint_random">Random color</string>
     <string name="qs_tint_accent">Accent color</string>
+    <string name="qs_tint_oos">Oxygen OS Style</string>
+    <string name="qs_tint_a12">Android S Style</string>
 
     <!-- QS Label Tint -->
     <string name="qs_label_use_new_tint">QS label tint</string>
@@ -683,24 +690,19 @@
     <!-- Dev options category -->
     <string name="dev_options_category_title">Dev options</string>
 
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker_title">Wakelock Blocker</string>
-    <string name="wakelock_blocker_summary">Block system wakelocks</string>
-    <string name="wakelock_blocker_save">Save</string>
-    <string name="wakelock_list_header">Available wakelocks</string>
-    <string name="wakelock_blocker_reload">Reload</string>
-    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
-    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
-
-    <!-- Alarm blocker -->
-    <string name="alarm_blocker">Alarm blocker</string>
-    <string name="alarm_blocker_title">Enable</string> 
-    <string name="alarm_blocker_summary">Block alarms while screen off</string>
-    <string name="alarm_blocker_save">Save</string>
-    <string name="alarm_list_header">Available alarms</string>
-    <string name="alarm_blocker_reload">Reload</string>
-    <string name="alarm_blocker_warning_title">Proceed with caution</string>
+    <!-- Alarm and Wakelock blocker -->
+    <string name="blocker_action_reload">Reload</string>
+    <string name="blocker_action_save">Save</string>
+    <string name="blocker_action_save_toast">Settings saved successfully</string>
+    <string name="blocker_warning_title">Warning</string>
+    <string name="wakelock_blocker_title">Wakelock blocker</string>
+    <string name="wakelock_blocker_summary">Block system wakelocks to save battery</string>
+    <string name="wakelock_blocker_warning">Blocking wakelocks has the potential to cause instability, crashes or data loss.</string>
+    <string name="wakelock_blocker_display_text">To see and block wakelocks, turn on wakelock blocker.</string>
+    <string name="alarm_blocker_title">Alarm blocker</string>
+    <string name="alarm_blocker_summary">Block alarms while the screen is off to save battery</string>
     <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
+    <string name="alarm_blocker_display_text">To see and block alarms, turn on alarm blocker.</string>
 
     <!-- Heads up -->
     <string name="heads_up_notifications">Heads up</string>
@@ -810,7 +812,7 @@
     <string name="qs_tile_title_visibility_title">Show QS tiles title</string>
 
     <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">In-call vibration options</string>
+    <string name="incall_vibration_category">Call Notification Options</string>
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
@@ -1030,6 +1032,7 @@
     <string name="pulse_ambient_light_color_mode_wall">Automatic (Wallpaper Based)</string>
     <string name="pulse_ambient_light_color_mode_accent">Accent</string>
     <string name="pulse_ambient_light_color_mode_custom">Custom</string>
+    <string name="pulse_ambient_light_color_mode_random">Random Color</string>
     <string name="pulse_ambient_light_duration_title">Light duration</string>
     <string name="pulse_ambient_light_repeat_count_title">Light repeat count</string>
     <string name="pulse_ambient_light_show_always_title">Show always</string>
@@ -1118,7 +1121,7 @@
     <string name="qs_footer_text_title">QS footer text</string>
     <string name="qs_footer_text_summary">Display text at bottom of QS panel</string>
     <string name="qs_footer_text_string_title">Customize footer text</string>
-    <string name="qs_footer_text_string_summary">Set to empty for default MSM-Xtended</string> 
+    <string name="qs_footer_text_string_summary">Set to empty for default Xtended</string> 
 
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
@@ -1186,6 +1189,11 @@
     <string name="switch_narrow">Narrow</string>
     <string name="switch_contained">Contained</string>
     <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_retro">Retro</string>
+    <string name="switch_oos">OxygenOS 11</string>
+    <string name="switch_fluid">Fluid</string>
+    <string name="switch_android_s">Android S</string>
 
     <!-- Display cutout options -->
     <string name="cutout_main">Display Cutout</string>
@@ -1212,11 +1220,16 @@
 
     <!-- Volume Panel Plugin -->
     <string name="volume_panel">Volume Panel Style</string>
+    <string name="audio_panel_theme_default">Xtended Default</string>
+    <string name="volume_panel_stock_val">com.android.systemui.volume</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Compact</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tiled</string>
     <string name="volume_panel_miui">MIUI Compact</string>
+    <string name="volume_panel_oos">OOS</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
 
     <!-- Volume Panel Plugin Values -->
     <string name="volume_panel_aosp_val">co.potatoproject.plugin.volume.aosp</string>
@@ -1224,6 +1237,9 @@
     <string name="volume_panel_oreo_val">co.potatoproject.plugin.volume.oreo</string>
     <string name="volume_panel_tiled_val">co.potatoproject.plugin.volume.tiled</string>
     <string name="volume_panel_miui_val" translatable="false">co.potatoproject.plugin.volume.miui</string>
+    <string name="volume_panel_oos_val" translatable="false">co.potatoproject.plugin.volume.oos</string>
+    <string name="volume_panel_p404_val" translatable="false">co.potatoproject.plugin.volume.p404</string>
+    <string name="volume_panel_ssos_val" translatable="false">co.potatoproject.plugin.volume.ssos</string>
 
     <!-- reTicker -->
     <string name="reticker_category" translatable="false">reTicker</string>
@@ -1433,6 +1449,9 @@
     <string name="status_bar_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Notification preview in status bar</string>
+    <string name="ticker_disabled">No ticker</string>
+    <string name="ticker_enabled">Notification ticker</string>
+    <string name="ticker_media_enabled">Notifications and music ticker</string>
     <string name="ticker_animation_mode_title">Ticker animation</string>
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
@@ -1462,5 +1481,124 @@
     <string name="status_bar_temperature_show_scale_hide_image">Show temp with scale</string>
     <string name="status_bar_temperature_hide_scale_hide_image">Show temp without scale</string>
     <string name="status_bar_show_image">Show image</string>
+
+    <!-- Power menu and dialogs opacity -->
+    <string name="panel_porn_title">Power Menu Transparency</string>
+    <string name="power_menu_transparency">Power/reboot menu opacity</string>
+    <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
+
+    <!-- Powermenu Background -->
+    <string name="power_menu_bg_title">Background Filter</string>
+    <string name="power_menu_bg_summary">Enables Custom filter when powermenu is active</string>
+    <string name="power_menu_bg_style_title">Filter Type</string>
+    <string name="power_menu_filter_grayscale">Grayscale</string>
+    <string name="power_menu_filter_blur">Blur</string>
+    <string name="power_menu_filter_tint">Accent tinted</string>
+    <string name="power_menu_filter_grayblur">Grayscale and blurred</string>
+    <string name="power_menu_filter_tinted_blur">Accent Tinted and blurred</string>
+
+    <!-- Aggressive battery -->
+    <string name="aggressive_battery_title">Aggressive Battery</string>
+    <string name="aggressive_battery_summary">More strict battery savings</string>
+    <string name="aggressive_battery_warning_text">These are power saving features. They may interfere with services intended to run at idle, like navigation apps. You can whitelist these apps from being affected in the app battery settings.</string>
+    <string name="aggressive_idle_title">Aggressive Idle</string>
+    <string name="aggressive_idle_summary">Enter device idle more frequently and wake up less</string>
+    <string name="aggressive_standby_title">Aggressive Standby</string>
+    <string name="aggressive_standby_summary">Restrict apps from running the background</string>
+    <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string>
+    <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
+
+    <!-- Per-app volume -->
+    <string name="show_app_volume_title">Show app volume</string>
+    <string name="show_app_volume_summary">Show app volume in volume panel (Only works for Stock Volume panel)</string>
+
+    <!-- Custom Signal bar icons -->
+    <string name="custom_signal_bar_title">Signal icons</string>
+
+    <!-- Custom Wi-Fi bar icons -->
+    <string name="custom_wifi_bar_title">Wi-Fi icon</string>
+
+    <!-- Notification headers -->
+    <string name="notification_headers_title">Notification headers</string>
+    <string name="notification_headers_summary">Show headers in the notification shade</string>
+
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
+    <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
+    <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+    
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">Doze Brightness Config</string>
+    <string name="ambient_pulse_brightness_title">Ambient Display Brightness</string>
+    <string name="ambient_pulse_brightness_summary">Set brightness to use when ambient notifcations are shown</string>
+    <string name="ambient_doze_brightness_title">Always-On Display Brightness</string>
+    <string name="ambient_doze_brightness_summary">Set brightness to use during always-on display</string>
+
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Blink Flashlight on call</string>
+    <string name="flashlight_on_call_disabled">Disabled</string>
+    <string name="flashlight_on_call_not_dnd">Blink flashlight only in ringer mode</string>
+    <string name="flashlight_on_call_dnd">Blink flashlight only in DND mode</string>
+    <string name="flashlight_on_call_always">Always blink flashlight</string>
+    
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_category">Breathing Notifications</string>
+    <string name="breathing_notifications_title">Breathing notifications</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the status bar</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
+    <string name="voicemail_breath_title">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
+
+    <!-- Lock screen Clocks -->
+    <string name="lock_screen_custom_clock_face_title">Lockscreen clock style</string>
+    <string name="lock_screen_custom_clock_face_summary">Set custom lockscreen clock style</string>
+    <string name="lock_screen_custom_clock_face_default">Default</string>
+    <string name="lock_screen_custom_clock_face_default_bold">Default (Bold)</string>
+    <string name="lock_screen_custom_clock_face_alt_typographic">Typographic (New)</string> 
+    <string name="lock_screen_custom_clock_face_analog">Analog</string>
+    <string name="lock_screen_custom_clock_face_bubble">Bubble</string>
+    <string name="lock_screen_custom_clock_face_clockertino">Clockertino</string>
+    <string name="lock_screen_custom_clock_face_divided">Divided Lines</string>
+    <string name="lock_screen_custom_clock_face_dot">Dot</string>
+    <string name="lock_screen_custom_clock_face_fluid">Fluid</string>
+    <string name="lock_screen_custom_clock_face_ide">IDE</string>
+    <string name="lock_screen_custom_clock_face_ide_java">IDE (Java Mix)</string>
+    <string name="lock_screen_custom_clock_face_lineage">Lineage</string>
+    <string name="lock_screen_custom_clock_face_mnml_box">MNML Box</string>
+    <string name="lock_screen_custom_clock_face_mnml_minimal">MNML Minimal</string>
+    <string name="lock_screen_custom_clock_face_oronos">Õronos</string>
+    <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
+    <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (Bold)</string>
+    <string name="lock_screen_custom_clock_face_samsung_highlight">Samsung (Highlight)</string>
+    <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
+    <string name="lock_screen_custom_clock_face_shapeshift">ShapeShift</string>
+    <string name="lock_screen_custom_clock_face_sneeky">Sneeky</string>
+    <string name="lock_screen_custom_clock_face_spectrum">Spectrum</string>
+    <string name="lock_screen_custom_clock_face_spidey">Spidey</string>
+    <string name="lock_screen_custom_clock_face_sticker_tag">Sticker Tag</string>
+    <string name="lock_screen_custom_clock_face_typographic">Typographic</string>
+    <string name="lock_screen_custom_clock_face_typographic_alt">Typographic (Center)</string>
+    <string name="lock_screen_custom_clock_face_tux">Tux</string>
+
+    <!-- New QS Bg -->
+    <string name="qs_new_bg_title">Custom Qs Background-Borders</string>
+    <string name="qs_new_bg_summary">Whether to enable custom accent-gradient based qs panel background</string>
+    <string name="qs_new_bg_default">Default Primary</string>
+    <string name="qs_new_bg_accent">Accent Bg Bottom</string>
+    <string name="qs_new_bg_gradient">Gradient Bg Bottom</string>
+    <string name="qs_new_bg_rev_grad">Reverse-Gradient Bg Bottom</string>
+    <string name="qs_new_bg_accent_brdr">Accent Bg with Border</string>
+    <string name="qs_new_bg_gradient_brdr">Gradient Bg with Border</string>
+    <string name="qs_new_bg_rev_grad_brdr">Reverse-Gradient Bg with Border</string>
+    <string name="qs_header_new_bg_title">Qs Header Background-Borders</string>
+
+    <!-- SB Weather Customization -->
+    <string name="status_bar_weather_font_style_title">Weather Font Style</string>
+    <string name="status_bar_weather_font_color">Weather Font Color</string>
+    <string name="status_bar_weather_font_size">Weather Font Size</string>
+    <string name="status_bar_weather_icon_color">Weather Icon Color</string>
+    <string name="weather_footer">Weather Size will work only if Weather is placed on QS Header n not on Status Bar</string>
 
 </resources>

@@ -324,6 +324,7 @@
         <item>@string/power_menu_animation_card</item>
         <item>@string/power_menu_animation_translucent_top</item>
         <item>@string/power_menu_animation_translucent_bottom</item>
+        <item>@string/power_menu_animation_rotate</item>
     </string-array>
 
     <string-array name="power_menu_animations_values" translatable="false">
@@ -337,6 +338,7 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+        <item>10</item>
     </string-array>
 
     <!-- Lock Clock Fonts -->
@@ -458,6 +460,10 @@
         <item>@string/lockscreen_date_selection_str_gradient</item>
         <item>@string/lockscreen_date_selection_str_border_accent</item>
         <item>@string/lockscreen_date_selection_str_border_gradient</item>
+        <item>@string/lockscreen_date_selection_str_box_gradient_fd</item>
+        <item>@string/lockscreen_date_selection_str_border_gradient_fd</item>
+        <item>@string/lockscreen_date_selection_str_box_gradient_ad</item>
+        <item>@string/lockscreen_date_selection_str_border_gradient_ad</item>
     </string-array>
 
     <string-array name="lockscreen_date_selection_values" translatable="false">
@@ -472,6 +478,10 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
     </string-array>
 
     <!-- Lockscreen items allignment -->
@@ -490,14 +500,18 @@
     <!-- QS Tile Tint -->
     <string-array name="qs_tint_entries" translatable="false">
         <item>@string/qs_tint_off</item>
-        <item>@string/qs_tint_random</item> 
+        <item>@string/qs_tint_oos</item>
         <item>@string/qs_tint_accent</item>
+        <item>@string/qs_tint_a12</item>
+        <item>@string/qs_tint_random</item> 
     </string-array>
 
     <string-array name="qs_tint_values" translatable="false">
         <item>0</item>
-        <item>1</item>
+        <item>3</item>
         <item>2</item>
+        <item>4</item>
+        <item>1</item>
     </string-array>
 
     <!-- QS Label Tint -->
@@ -917,12 +931,14 @@
         <item>@string/pulse_ambient_light_color_mode_wall</item>
         <item>@string/pulse_ambient_light_color_mode_accent</item>
         <item>@string/pulse_ambient_light_color_mode_custom</item>
+        <item>@string/pulse_ambient_light_color_mode_random</item>
     </string-array>
     <string-array name="pulse_ambient_light_color_mode_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="pulse_ambient_light_layout_entries">
@@ -1027,6 +1043,8 @@
         <item>@string/lockscreen_date_selection_str_gradient</item>
         <item>@string/lockscreen_date_selection_str_border_accent</item>
         <item>@string/lockscreen_date_selection_str_border_gradient</item>
+        <item>@string/lockscreen_date_selection_str_box_gradient_ad</item>
+        <item>@string/lockscreen_date_selection_str_border_gradient_ad</item>
     </string-array>
 
     <string-array name="lockscreen_weather_bg_values" translatable="false">
@@ -1039,6 +1057,8 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 
     <!-- FOD Recognizing fingerprint animations -->
@@ -1116,6 +1136,11 @@
         <item>@string/switch_narrow</item>
         <item>@string/switch_contained</item>
         <item>@string/switch_telegram</item>
+        <item>@string/switch_md2</item>
+        <item>@string/switch_retro</item>
+        <item>@string/switch_oos</item>
+        <item>@string/switch_fluid</item>
+        <item>@string/switch_android_s</item>
     </string-array>
 
     <string-array name="switch_style_values" translatable="false">
@@ -1124,6 +1149,11 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
     </string-array>
 
     <!-- Display cutout options -->
@@ -1141,19 +1171,27 @@
 
     <!-- Volume Panel -->
     <string-array name="volume_panel_entries">
+        <item>@string/audio_panel_theme_default</item>
         <item>@string/volume_panel_aosp</item>
         <item>@string/volume_panel_compact</item>
         <item>@string/volume_panel_oreo</item>
         <item>@string/volume_panel_tiled</item>
         <item>@string/volume_panel_miui</item>
+        <item>@string/volume_panel_oos</item>
+        <item>@string/volume_panel_p404</item>
+        <item>@string/volume_panel_ssos</item>
     </string-array>
 
     <string-array name="volume_panel_values" translatable="false">
+        <item>@string/volume_panel_stock_val</item>
         <item>@string/volume_panel_aosp_val</item>
         <item>@string/volume_panel_compact_val</item>
         <item>@string/volume_panel_oreo_val</item>
         <item>@string/volume_panel_tiled_val</item>
         <item>@string/volume_panel_miui_val</item>
+        <item>@string/volume_panel_oos_val</item>
+        <item>@string/volume_panel_p404_val</item>
+        <item>@string/volume_panel_ssos_val</item>
     </string-array>
 
     <!-- Smart Pixels -->
@@ -1528,8 +1566,21 @@
       <item>2</item>
     </string-array>
 
+     <!-- Ticker mode -->
+    <string-array name="ticker_mode_entries">
+        <item>@string/ticker_disabled</item>
+        <item>@string/ticker_enabled</item>
+        <item>@string/ticker_media_enabled</item>
+    </string-array>
+
+    <string-array name="ticker_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Notification ticker -->
-     <string-array name="ticker_animation_mode_entries" translatable="false">
+    <string-array name="ticker_animation_mode_entries" translatable="false">
         <item>@string/ticker_animation_mode_alpha_fade</item>
         <item>@string/ticker_animation_mode_scroll</item>
     </string-array>
@@ -1566,6 +1617,135 @@
     <string-array name="sb_weather_location_values" translatable="false">
         <item>0</item>
         <item>1</item>
+    </string-array>
+
+   <!-- PowerMenu Filter -->
+    <string-array name="power_menu_bg_style_entries" translatable="false">
+        <item>@string/power_menu_filter_blur</item>
+        <item>@string/power_menu_filter_grayscale</item>
+        <item>@string/power_menu_filter_tint</item>
+        <item>@string/power_menu_filter_grayblur</item>
+        <item>@string/power_menu_filter_tinted_blur</item>
+    </string-array>
+
+    <string-array name="power_menu_bg_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!-- Blink flashlight for incoming calls -->
+    <string-array name="flashlight_on_call_entries">
+       <item>@string/flashlight_on_call_disabled</item>
+       <item>@string/flashlight_on_call_not_dnd</item>
+       <item>@string/flashlight_on_call_dnd</item>
+       <item>@string/flashlight_on_call_always</item>
+    </string-array>
+
+    <string-array name="flashlight_on_call_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Lockscreen Clock -->
+    <string-array name="lock_screen_custom_clock_face_entries" translatable="false">
+        <item>@string/lock_screen_custom_clock_face_default</item>
+        <item>@string/lock_screen_custom_clock_face_default_bold</item>
+        <item>@string/lock_screen_custom_clock_face_analog</item>
+        <item>@string/lock_screen_custom_clock_face_bubble</item>
+        <item>@string/lock_screen_custom_clock_face_typographic</item>
+        <item>@string/lock_screen_custom_clock_face_typographic_alt</item>
+        <item>@string/lock_screen_custom_clock_face_alt_typographic</item>
+        <item>@string/lock_screen_custom_clock_face_samsung</item>
+        <item>@string/lock_screen_custom_clock_face_samsung_bold</item>
+        <item>@string/lock_screen_custom_clock_face_samsung_highlight</item>
+        <item>@string/lock_screen_custom_clock_face_clockertino</item>
+        <item>@string/lock_screen_custom_clock_face_divided</item>
+        <item>@string/lock_screen_custom_clock_face_dot</item>
+        <item>@string/lock_screen_custom_clock_face_fluid</item>
+        <item>@string/lock_screen_custom_clock_face_ide</item>
+        <item>@string/lock_screen_custom_clock_face_ide_java</item>
+        <item>@string/lock_screen_custom_clock_face_lineage</item>
+        <item>@string/lock_screen_custom_clock_face_mnml_box</item>
+        <item>@string/lock_screen_custom_clock_face_mnml_minimal</item>
+        <item>@string/lock_screen_custom_clock_face_oronos</item>
+        <item>@string/lock_screen_custom_clock_face_sfuny</item>
+        <item>@string/lock_screen_custom_clock_face_shapeshift</item>
+        <item>@string/lock_screen_custom_clock_face_sneeky</item>
+        <item>@string/lock_screen_custom_clock_face_spectrum</item>
+        <item>@string/lock_screen_custom_clock_face_spidey</item>
+        <item>@string/lock_screen_custom_clock_face_sticker_tag</item>
+        <item>@string/lock_screen_custom_clock_face_tux</item>
+    </string-array>
+
+    <string-array name="lock_screen_custom_clock_face_values" translatable="false">
+        <item>com.android.keyguard.clock.DefaultClockController</item>
+        <item>com.android.keyguard.clock.DefaultBoldClockController</item>
+        <item>com.android.keyguard.clock.AnalogClockController</item>
+        <item>com.android.keyguard.clock.BubbleClockController</item>
+        <item>com.android.keyguard.clock.TypeClockController</item>
+        <item>com.android.keyguard.clock.TypeClockAltController</item>
+        <item>com.android.keyguard.clock.TypeAltClockController</item>
+        <item>com.android.keyguard.clock.SamsungClockController</item>
+        <item>com.android.keyguard.clock.SamsungBoldClockController</item>
+        <item>com.android.keyguard.clock.SamsungHighlightClockController</item>
+        <item>com.android.keyguard.clock.ClockertinoClockController</item>
+        <item>com.android.keyguard.clock.DividedLinesClockController</item>
+        <item>com.android.keyguard.clock.DotClockController</item>
+        <item>com.android.keyguard.clock.FluidClockController</item>
+        <item>com.android.keyguard.clock.IDEClockController</item>
+        <item>com.android.keyguard.clock.IDEJavaClockController</item>
+        <item>com.android.keyguard.clock.LineageClockController</item>
+        <item>com.android.keyguard.clock.MNMLBoxClockController</item>
+        <item>com.android.keyguard.clock.MNMLMinimalClockController</item>
+        <item>com.android.keyguard.clock.OronosClockController</item>
+        <item>com.android.keyguard.clock.SfunyClockController</item>
+        <item>com.android.keyguard.clock.ShapeShiftClockController</item>
+        <item>com.android.keyguard.clock.SneekyClockController</item>
+        <item>com.android.keyguard.clock.SpectrumClockController</item>
+        <item>com.android.keyguard.clock.SpideyClockController</item>
+        <item>com.android.keyguard.clock.StickerTagClockController</item>
+        <item>com.android.keyguard.clock.TuxClockController</item>
+    </string-array>
+
+    <!-- Qs New Background style -->
+    <string-array name="qs_new_bg_entries" translatable="false">
+        <item>@string/qs_new_bg_default</item>
+        <item>@string/qs_new_bg_accent</item>
+        <item>@string/qs_new_bg_accent_brdr</item>
+        <item>@string/qs_new_bg_gradient</item>
+        <item>@string/qs_new_bg_gradient_brdr</item>
+        <item>@string/qs_new_bg_rev_grad</item>
+        <item>@string/qs_new_bg_rev_grad_brdr</item>
+    </string-array>
+
+    <string-array name="qs_new_bg_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>4</item>
+        <item>2</item>
+        <item>5</item>
+        <item>3</item>
+        <item>6</item>
+    </string-array>
+
+    <!-- Qs Header New Background style -->
+    <string-array name="qs_header_new_bg_entries" translatable="false">
+        <item>@string/qs_new_bg_default</item>
+        <item>@string/qs_new_bg_accent_brdr</item>
+        <item>@string/qs_new_bg_gradient_brdr</item>
+        <item>@string/qs_new_bg_rev_grad_brdr</item>
+    </string-array>
+
+    <string-array name="qs_header_new_bg_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 
 </resources>

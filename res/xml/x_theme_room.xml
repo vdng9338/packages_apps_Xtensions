@@ -43,10 +43,24 @@
             android:defaultValue="0xffffff"
             android:persistent="false" />
 
+       <Preference
+            android:key="lockscreen_clock"
+            android:title="@string/lock_screen_custom_clock_face_title"
+            android:summary="@string/lock_screen_custom_clock_face_summary"
+            android:fragment="com.xtended.fragments.LockscreenClock" />
+
         <com.android.settings.display.FontDialogPreference
             android:key="custom_font"
             android:title="@string/font_picker_title"
             android:persistent="false" />
+
+        <ListPreference
+            android:key="android.theme.customization.wifi_icon"
+            android:title="@string/custom_wifi_bar_title"/>
+
+        <ListPreference
+            android:key="android.theme.customization.signal_icon"
+            android:title="@string/custom_signal_bar_title"/>
 
         <ListPreference
             android:key="android.theme.customization.adaptive_icon_shape"
@@ -55,16 +69,6 @@
         <ListPreference
             android:key="android.theme.customization.icon_pack.android"
             android:title="@string/theme_customization_sysui_icon_title"/>
-
-        <Preference
-            android:key="clock_style"
-            android:title="@string/clock_style_title"
-            android:summary="@string/clock_style_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:targetPackage="com.android.wallpaper"
-                android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
-        </Preference>
 
         <com.xtended.support.preferences.SystemSettingListPreference 
             android:key="xtensions_style"
@@ -178,6 +182,24 @@
             settings:min="0"
             android:defaultValue="100"
             android:persistent="false" />
+
+        <!-- Qs Header Background -->
+        <com.xtended.support.preferences.SystemSettingIntListPreference
+            android:key="qs_header_new_bg"
+            android:title="@string/qs_header_new_bg_title"
+            android:summary="%s"
+            android:entries="@array/qs_header_new_bg_entries"
+            android:entryValues="@array/qs_header_new_bg_values"
+            android:defaultValue="0" />
+
+        <!-- Qs New Background -->
+        <com.xtended.support.preferences.SystemSettingIntListPreference
+            android:key="qs_new_bg_enabled"
+            android:title="@string/qs_new_bg_title"
+            android:summary="%s"
+            android:entries="@array/qs_new_bg_entries"
+            android:entryValues="@array/qs_new_bg_values"
+            android:defaultValue="0" />
 
        <com.xtended.support.preferences.SystemSettingSwitchPreference
            android:key="qs_panel_type_background"

@@ -68,6 +68,13 @@
            android:title="@string/smart_pixels_title"
            android:summary="@string/smart_pixels_summary" />
 
+        <!-- Aggressive Battery -->
+        <Preference
+            android:key="aggressive_battery"
+            android:title="@string/aggressive_battery_title"
+            android:summary="@string/aggressive_battery_summary"
+            android:fragment="com.xtended.fragments.AggressiveBattery" />
+
         <!-- Sensor Block -->
         <Preference
             android:key="sensor_block_settings"
@@ -145,7 +152,7 @@
 
         <Preference
             android:key="alarm_blocker"
-            android:title="@string/alarm_blocker"
+            android:title="@string/alarm_blocker_title"
             android:summary="@string/alarm_blocker_summary"
             android:fragment="com.xtended.fragments.AlarmBlocker" />
 
